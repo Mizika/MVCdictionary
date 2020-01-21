@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<h1>Выбери словарь:</h1>
+<form th:action="@{/}" method="post">
+    <select class="form-control" name="dictionaryName">
+        <option th:value="first.txt" th:text="First.txt"/>
+        <option th:value="second.txt" th:text="Second.txt"/>
+    </select>
+    <input type="submit" value="Выбрать">
+</form>
+</body>
+</html>

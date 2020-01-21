@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Записи в словаре:</h1>
+<input type="button" onclick="history.back();" value="Назад"/>
+<div th:each="record : ${records}">
+    <div class="content">
+        <p th:text="${record}"/>
+    </div>
+</div>
+</body>
+</html>
