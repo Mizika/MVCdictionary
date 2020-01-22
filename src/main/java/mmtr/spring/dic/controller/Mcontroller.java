@@ -5,7 +5,6 @@ import mmtr.spring.dic.service.Mservices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,8 +15,6 @@ public class Mcontroller {
     private String dictionaryName;
     private String keyValue;
     IAction action = new Mservices();
-
-
 
     @GetMapping("/")
     public String getHome(){
@@ -45,18 +42,25 @@ public class Mcontroller {
         return "keyForm";
     }
 
-//    @PostMapping("/keyForm")
-//    public String postKey(@RequestParam("keyValue") String keyValue) {
-//        this.keyValue = keyValue;
-//        System.out.println(keyValue);
-//        return "searchByKey";
-//    }
-
     @PostMapping("/searchByKey")
     public String searchByKey(@RequestParam("keyValue") String keyValue, Model model) throws IOException {
         this.keyValue = keyValue;
         model.addAttribute("byKey", action.searchByKey(dictionaryName, keyValue));
         return "searchByKey";
     }
+
+    @GetMapping("/removeKeyForm")
+    public String getRemoveKey(){
+        return "removeKeyForm";
+    }
+
+    @PostMapping("/removeValue")
+    public String removeFromFileByKey(@RequestParam("keyValue") String keyValue, Model model) throws IOException {
+        this.keyValue = keyValue;
+        model.addAttribute("removeV", action.removeFromFile(dictionaryName, keyValue));
+        return "removeValue";
+    }
+
+
 }
 
