@@ -6,12 +6,12 @@
 </head>
 <body>
 <h3>Поиск записи по ключу:</h3>
-    <form action="#"  name="keyValue" method="post">
-        <p>Ключ:<input type="text"/></p>
-        <input type="submit" value="Поиск"/>
-        <input type="reset" value="Очистить поле"/>
-    </form>
-
+<form action="/searchByKey" method="POST">
+    <label>Ключ:</label>
+    <input type="text" name="keyValue">
+    <input type="submit" value="Поиск"/>
+    <input type="reset" value="Очистить поле"/>
+</form>
 </body>
 </html>
 

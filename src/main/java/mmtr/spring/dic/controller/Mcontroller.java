@@ -14,8 +14,9 @@ import java.io.IOException;
 @Controller
 public class Mcontroller {
     private String dictionaryName;
-    IAction action = new Mservices();
     private String keyValue;
+    IAction action = new Mservices();
+
 
 
     @GetMapping("/")
@@ -44,17 +45,16 @@ public class Mcontroller {
         return "keyForm";
     }
 
-    @PostMapping("/keyForm")
-    public String postKey(@ModelAttribute String keyValue) {
-        this.keyValue = keyValue;
-        System.out.println(keyValue);
-        System.out.println(dictionaryName);
-        return "searchByKey";
-    }
+//    @PostMapping("/keyForm")
+//    public String postKey(@RequestParam("keyValue") String keyValue) {
+//        this.keyValue = keyValue;
+//        System.out.println(keyValue);
+//        return "searchByKey";
+//    }
 
-    @GetMapping("/searchByKey")
-    public String getShowByKey(Model model) throws IOException {
-        System.out.println(dictionaryName);
+    @PostMapping("/searchByKey")
+    public String searchByKey(@RequestParam("keyValue") String keyValue, Model model) throws IOException {
+        this.keyValue = keyValue;
         model.addAttribute("byKey", action.searchByKey(dictionaryName, keyValue));
         return "searchByKey";
     }
