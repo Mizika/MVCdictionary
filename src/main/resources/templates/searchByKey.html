@@ -28,7 +28,9 @@
 <div style="text-align: center;">
     <h2><strong>Результат поиска:</strong></h2>
     <h2 style="color:Tomato" th:text="${byKey}"/>
-    <input type="button" class="button" onclick="history.back();" value="Назад"/>
+    <p><a href="/showAll" class="button">Посмотреть записи в словаре</a>
+        <a href="/menu" class="button">Переход в меню</a>
+        <input type="button" class="button" onclick="history.back();" value="Назад"/></p>
 </div>
 </body>
 </html>
