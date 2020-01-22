@@ -26,6 +26,6 @@ public class SearchByKey {
     public static String readFromFileByKey(String dicName, String key) throws IOException {
 
         Map<String, String> data = DictionaryReader.readerFromFile(getPath(), dicName);
-        return data.getOrDefault(key, "NOT FOUND");
+        return data.getOrDefault(key, "Значение с данным ключом не существует!");
     }
 }
