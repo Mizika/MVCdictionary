@@ -9,4 +9,6 @@ public interface IAction {
     String searchByKey(String DicName, String Key) throws IOException;
 
     String removeFromFile(String dicName, String key) throws IOException;
+
+    String addValue(String filename, String key, String value) throws IOException;
 }

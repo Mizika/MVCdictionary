@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Введите ключ:</h1>
+<p><h3>Значение может состоять только из 5 цифр!</h3></p>
+<form action="/addValue" method="POST">
+    <p><input type="button" onclick="history.back();" value="Назад"/></p>
+    <label>Ключ:</label>
+    <p><input type="text" name="keyValue"></p>
+    <label>Значение:</label>
+    <p><input type="text" name="value"></p>
+    <input type="submit" value="Ввести"/>
+    <input type="reset" value="Очистить поле"/>
+</form>
+</body>
+</html>
+

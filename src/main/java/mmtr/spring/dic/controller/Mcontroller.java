@@ -14,7 +14,9 @@ import java.io.IOException;
 public class Mcontroller {
     private String dictionaryName;
     private String keyValue;
+    private String value;
     IAction action = new Mservices();
+
 
     @GetMapping("/")
     public String getHome(){
@@ -59,6 +61,26 @@ public class Mcontroller {
         this.keyValue = keyValue;
         model.addAttribute("removeV", action.removeFromFile(dictionaryName, keyValue));
         return "removeValue";
+    }
+
+    @GetMapping("/addKeyForm")
+    public String getAddKey(){
+        switch (dictionaryName){
+            case "first.txt":
+                return "addKeyForm";
+            case "second.txt":
+                return "addkeyFormSecond";
+        }
+        return null;
+
+    }
+
+    @PostMapping("/addValue")
+    public String addValue(@RequestParam String keyValue, String value, Model model) throws IOException {
+        this.keyValue = keyValue;
+        this.value = value;
+        model.addAttribute("addV", action.addValue(dictionaryName, keyValue, value));
+        return "addValue";
     }
 
 

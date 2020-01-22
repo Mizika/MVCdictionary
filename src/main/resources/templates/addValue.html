@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Удаление записи:</h1>
+<input type="button" onclick="history.back();" value="Назад"/>
+<option th:text="'================='"/>
+<option th:text="${addV}"/>
+<option th:text="'================='"/>
+<p><a href="/showAll" class="btn">Посмотреть записи в словаре</a></p>
+<p><a href="/menu" class="btn">Переход в меню</a></p>
+</body>
+</html>

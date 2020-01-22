@@ -1,9 +1,6 @@
 package mmtr.spring.dic.service;
 
-import mmtr.spring.dic.repository.DeleteByKey;
-import mmtr.spring.dic.repository.IAction;
-import mmtr.spring.dic.repository.ReadAllFromFile;
-import mmtr.spring.dic.repository.SearchByKey;
+import mmtr.spring.dic.repository.*;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -25,6 +22,11 @@ public class Mservices implements IAction {
     @Override
     public String removeFromFile(String dicName, String key) throws IOException {
         return DeleteByKey.removeFromFileByKey(dicName, key);
+    }
+
+    @Override
+    public String addValue(String filename, String key, String value) throws IOException {
+        return AddValuesToFile.addToFileByKey(filename, key, value);
     }
 
 
